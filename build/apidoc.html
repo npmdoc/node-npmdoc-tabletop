@@ -1,0 +1,1484 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/jsoma/tabletop#readme"
+
+    >tabletop (v1.5.1)</a>
+</h1>
+<h4>**Tabletop.js** takes a Google Spreadsheet and makes it easily accessible through JavaScript. With zero dependencies!</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.tabletop">module tabletop</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tabletop.tabletop">
+            function <span class="apidocSignatureSpan"></span>tabletop
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tabletop.Gruntfile">
+            function <span class="apidocSignatureSpan">tabletop.</span>Gruntfile
+            <span class="apidocSignatureSpan">(grunt)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tabletop.Model">
+            function <span class="apidocSignatureSpan">tabletop.</span>Model
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tabletop.Model.prototype.all">
+            function <span class="apidocSignatureSpan">tabletop.</span>Model.prototype.all
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tabletop.Model.prototype.fetchPrettyColumns">
+            function <span class="apidocSignatureSpan">tabletop.</span>Model.prototype.fetchPrettyColumns
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tabletop.Model.prototype.loadPrettyColumns">
+            function <span class="apidocSignatureSpan">tabletop.</span>Model.prototype.loadPrettyColumns
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tabletop.Model.prototype.prettifyElements">
+            function <span class="apidocSignatureSpan">tabletop.</span>Model.prototype.prettifyElements
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tabletop.Model.prototype.ready">
+            function <span class="apidocSignatureSpan">tabletop.</span>Model.prototype.ready
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tabletop.Model.prototype.toArray">
+            function <span class="apidocSignatureSpan">tabletop.</span>Model.prototype.toArray
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tabletop.init">
+            function <span class="apidocSignatureSpan">tabletop.</span>init
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tabletop.sheets">
+            function <span class="apidocSignatureSpan">tabletop.</span>sheets
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tabletop.toString">
+            function <span class="apidocSignatureSpan">tabletop.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">tabletop.</span>Model.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">tabletop.</span>callbacks</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.tabletop.Gruntfile">module tabletop.Gruntfile</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tabletop.Gruntfile.Gruntfile">
+            function <span class="apidocSignatureSpan">tabletop.</span>Gruntfile
+            <span class="apidocSignatureSpan">(grunt)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.tabletop.Model">module tabletop.Model</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tabletop.Model.Model">
+            function <span class="apidocSignatureSpan">tabletop.</span>Model
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.tabletop.Model.prototype">module tabletop.Model.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tabletop.Model.prototype.all">
+            function <span class="apidocSignatureSpan">tabletop.Model.prototype.</span>all
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tabletop.Model.prototype.fetchPrettyColumns">
+            function <span class="apidocSignatureSpan">tabletop.Model.prototype.</span>fetchPrettyColumns
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tabletop.Model.prototype.loadPrettyColumns">
+            function <span class="apidocSignatureSpan">tabletop.Model.prototype.</span>loadPrettyColumns
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tabletop.Model.prototype.prettifyElements">
+            function <span class="apidocSignatureSpan">tabletop.Model.prototype.</span>prettifyElements
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tabletop.Model.prototype.ready">
+            function <span class="apidocSignatureSpan">tabletop.Model.prototype.</span>ready
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tabletop.Model.prototype.toArray">
+            function <span class="apidocSignatureSpan">tabletop.Model.prototype.</span>toArray
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.tabletop.Model.prototype.all">module tabletop.Model.prototype.all</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tabletop.Model.prototype.all.all">
+            function <span class="apidocSignatureSpan">tabletop.Model.prototype.</span>all
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.tabletop.Model.prototype.fetchPrettyColumns">module tabletop.Model.prototype.fetchPrettyColumns</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tabletop.Model.prototype.fetchPrettyColumns.fetchPrettyColumns">
+            function <span class="apidocSignatureSpan">tabletop.Model.prototype.</span>fetchPrettyColumns
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.tabletop.Model.prototype.loadPrettyColumns">module tabletop.Model.prototype.loadPrettyColumns</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tabletop.Model.prototype.loadPrettyColumns.loadPrettyColumns">
+            function <span class="apidocSignatureSpan">tabletop.Model.prototype.</span>loadPrettyColumns
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.tabletop.Model.prototype.prettifyElements">module tabletop.Model.prototype.prettifyElements</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tabletop.Model.prototype.prettifyElements.prettifyElements">
+            function <span class="apidocSignatureSpan">tabletop.Model.prototype.</span>prettifyElements
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.tabletop.Model.prototype.ready">module tabletop.Model.prototype.ready</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tabletop.Model.prototype.ready.ready">
+            function <span class="apidocSignatureSpan">tabletop.Model.prototype.</span>ready
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.tabletop.Model.prototype.toArray">module tabletop.Model.prototype.toArray</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tabletop.Model.prototype.toArray.toArray">
+            function <span class="apidocSignatureSpan">tabletop.Model.prototype.</span>toArray
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.tabletop.init">module tabletop.init</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tabletop.init.init">
+            function <span class="apidocSignatureSpan">tabletop.</span>init
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.tabletop.sheets">module tabletop.sheets</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tabletop.sheets.sheets">
+            function <span class="apidocSignatureSpan">tabletop.</span>sheets
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.tabletop.toString">module tabletop.toString</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tabletop.toString.toString">
+            function <span class="apidocSignatureSpan">tabletop.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.tabletop" id="apidoc.module.tabletop">module tabletop</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.tabletop.tabletop" id="apidoc.element.tabletop.tabletop">
+        function <span class="apidocSignatureSpan"></span>tabletop
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">tabletop = function (options) {
+  // Make sure Tabletop is being used as a constructor no matter what.
+  if(!this || !(this instanceof Tabletop)) {
+    return new Tabletop(options);
+  }
+
+  if(typeof(options) === &#x27;string&#x27;) {
+    options = { key : options };
+  }
+
+  this.callback = options.callback;
+  this.wanted = options.wanted || [];
+  this.key = options.key;
+  this.simpleSheet = !!options.simpleSheet;
+  this.parseNumbers = !!options.parseNumbers;
+  this.wait = !!options.wait;
+  this.reverse = !!options.reverse;
+  this.postProcess = options.postProcess;
+  this.debug = !!options.debug;
+  this.query = options.query || &#x27;&#x27;;
+  this.orderby = options.orderby;
+  this.endpoint = options.endpoint || &#x27;https://spreadsheets.google.com&#x27;;
+  this.singleton = !!options.singleton;
+  this.simpleUrl = !!(options.simpleUrl || options.simple_url); //jshint ignore:line
+  this.callbackContext = options.callbackContext;
+  // Default to on, unless there&#x27;s a proxy, in which case it&#x27;s default off
+  this.prettyColumnNames = typeof(options.prettyColumnNames) === &#x27;undefined&#x27; ? !options.proxy : options.prettyColumnNames;
+
+  if(typeof(options.proxy) !== &#x27;undefined&#x27;) {
+    // Remove trailing slash, it will break the app
+    this.endpoint = options.proxy.replace(/\/$/,&#x27;&#x27;);
+    this.simpleUrl = true;
+    this.singleton = true;
+    // Let&#x27;s only use CORS (straight JSON request) when
+    // fetching straight from Google
+    supportsCORS = false;
+  }
+
+  this.parameterize = options.parameterize || false;
+
+  if (this.singleton) {
+    if (typeof(Tabletop.singleton) !== &#x27;undefined&#x27;) {
+      this.log(&#x27;WARNING! Tabletop singleton already defined&#x27;);
+    }
+    Tabletop.singleton = this;
+  }
+
+<span class="apidocCodeCommentSpan">  /* Be friendly about what you accept */
+</span>  if (/key=/.test(this.key)) {
+    this.log(&#x27;You passed an old Google Docs url as the key! Attempting to parse.&#x27;);
+    this.key = this.key.match(&#x27;key=(.*?)(&#x26;|#|$)&#x27;)[1];
+  }
+
+  if (/pubhtml/.test(this.key)) {
+    this.log(&#x27;You passed a new Google Spreadsheets url as the key! Attempting to parse.&#x27;);
+    this.key = this.key.match(&#x27;d\\/(.*?)\\/pubhtml&#x27;)[1];
+  }
+
+  if(/spreadsheets\/d/.test(this.key)) {
+    this.log(&#x27;You passed the most recent version of Google Spreadsheets url as the key! Attempting to parse.&#x27;);
+    this.key = this.key.match(&#x27;d\\/(.*?)\/&#x27;)[1];
+  }
+
+  if (!this.key) {
+    this.log(&#x27;You need to pass Tabletop a key!&#x27;);
+    return;
+  }
+
+  this.log(&#x27;Initializing with key &#x27; + this.key);
+
+  this.models = {};
+  this.modelNames = [];
+  this.model_names = this.modelNames; //jshint ignore:line
+
+  this.baseJsonPath = &#x27;/feeds/worksheets/&#x27; + this.key + &#x27;/public/basic?alt=&#x27;;
+
+  if (inNodeJS || supportsCORS) {
+    this.baseJsonPath += &#x27;json&#x27;;
+  } else {
+    this.baseJsonPath += &#x27;json-in-script&#x27;;
+  }
+
+  if(!this.wait) {
+    this.fetch();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tabletop.Gruntfile" id="apidoc.element.tabletop.Gruntfile">
+        function <span class="apidocSignatureSpan">tabletop.</span>Gruntfile
+        <span class="apidocSignatureSpan">(grunt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Gruntfile = function (grunt) {
+  grunt.loadNpmTasks(&#x27;grunt-contrib-connect&#x27;);
+  grunt.loadNpmTasks(&#x27;grunt-contrib-jshint&#x27;);
+  grunt.loadNpmTasks(&#x27;grunt-contrib-uglify&#x27;);
+
+  grunt.initConfig({
+    uglify: {
+      options: {
+          mangle: false,
+          quoteStyle: 1
+      },
+      tabletop: {
+        files: {
+          &#x27;src/tabletop.min.js&#x27;: [&#x27;src/tabletop.js&#x27;]
+        }
+      }
+    },
+    connect: {
+      testing: {
+        options: {
+          port: 8080
+        }
+      },
+      secure: {
+        options: {
+          port: 8081,
+          keepalive: true,
+          protocol: &#x27;https&#x27;
+        }
+      }
+    },
+    // Make sure code styles are up to par and there are no obvious mistakes
+    jshint: {
+      options: {
+        jshintrc: &#x27;.jshintrc&#x27;,
+        reporter: require(&#x27;jshint-stylish&#x27;)
+      },
+      all: {
+        src: [
+          &#x27;Gruntfile.js&#x27;,
+          &#x27;src/{,*/}*.js&#x27;,
+          &#x27;!src/{,*/}*.min.js&#x27;,
+        ]
+      }
+    }
+  });
+
+  grunt.registerTask(&#x27;default&#x27;, [&#x27;jshint&#x27;, &#x27;uglify&#x27;, &#x27;connect&#x27;]);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tabletop.Model" id="apidoc.element.tabletop.Model">
+        function <span class="apidocSignatureSpan">tabletop.</span>Model
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Model = function (options) {
+  var i, j, ilen, jlen;
+  this.columnNames = [];
+  this.column_names = this.columnNames; // jshint ignore:line
+  this.name = options.data.feed.title.$t;
+  this.tabletop = options.tabletop;
+  this.elements = [];
+  this.onReady = options.onReady;
+  this.raw = options.data; // A copy of the sheet&#x27;s raw data, for accessing minutiae
+
+  if (typeof(options.data.feed.entry) === &#x27;undefined&#x27;) {
+    options.tabletop.log(&#x27;Missing data for &#x27; + this.name + &#x27;, make sure you didn\&#x27;t forget column headers&#x27;);
+    this.originalColumns = [];
+    this.elements = [];
+    this.onReady.call(this);
+    return;
+  }
+
+  for (var key in options.data.feed.entry[0]){
+    if (/^gsx/.test(key)) {
+      this.columnNames.push(key.replace(&#x27;gsx$&#x27;,&#x27;&#x27;));
+    }
+  }
+
+  this.originalColumns = this.columnNames;
+  this.original_columns = this.originalColumns; // jshint ignore:line
+
+  for (i = 0, ilen =  options.data.feed.entry.length ; i &#x3c; ilen; i++) {
+    var source = options.data.feed.entry[i];
+    var element = {};
+    for (j = 0, jlen = this.columnNames.length; j &#x3c; jlen ; j++) {
+      var cell = source[&#x27;gsx$&#x27; + this.columnNames[j]];
+      if (typeof(cell) !== &#x27;undefined&#x27;) {
+        if (options.parseNumbers &#x26;&#x26; cell.$t !== &#x27;&#x27; &#x26;&#x26; !isNaN(cell.$t)) {
+          element[this.columnNames[j]] = +cell.$t;
+        } else {
+          element[this.columnNames[j]] = cell.$t;
+        }
+      } else {
+        element[this.columnNames[j]] = &#x27;&#x27;;
+      }
+    }
+    if (element.rowNumber === undefined) {
+      element.rowNumber = i + 1;
+    }
+
+    if (options.postProcess) {
+      options.postProcess(element);
+    }
+
+    this.elements.push(element);
+  }
+
+  if (options.prettyColumnNames) {
+    this.fetchPrettyColumns();
+  } else {
+    this.onReady.call(this);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tabletop.Model.prototype.all" id="apidoc.element.tabletop.Model.prototype.all">
+        function <span class="apidocSignatureSpan">tabletop.</span>Model.prototype.all
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Model.prototype.all = function () {
+  return this.elements;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tabletop.Model.prototype.fetchPrettyColumns" id="apidoc.element.tabletop.Model.prototype.fetchPrettyColumns">
+        function <span class="apidocSignatureSpan">tabletop.</span>Model.prototype.fetchPrettyColumns
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Model.prototype.fetchPrettyColumns = function () {
+  if (!this.raw.feed.link[3]) {
+    return this.ready();
+  }
+
+  var cellurl = this.raw.feed.link[3].href.replace(&#x27;/feeds/list/&#x27;, &#x27;/feeds/cells/&#x27;).replace(&#x27;https://spreadsheets.google.com&#x27;, &#x27;&#x27;);
+  var that = this;
+  this.tabletop.requestData(cellurl, function(data) {
+    that.loadPrettyColumns(data);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tabletop.Model.prototype.loadPrettyColumns" id="apidoc.element.tabletop.Model.prototype.loadPrettyColumns">
+        function <span class="apidocSignatureSpan">tabletop.</span>Model.prototype.loadPrettyColumns
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Model.prototype.loadPrettyColumns = function (data) {
+  var prettyColumns = {};
+
+  var columnNames = this.columnNames;
+
+  var i = 0;
+  var l = columnNames.length;
+
+  for (; i &#x3c; l; i++) {
+    if (typeof data.feed.entry[i].content.$t !== &#x27;undefined&#x27;) {
+      prettyColumns[columnNames[i]] = data.feed.entry[i].content.$t;
+    } else {
+      prettyColumns[columnNames[i]] = columnNames[i];
+    }
+  }
+
+  this.prettyColumns = prettyColumns;
+  this.pretty_columns = this.prettyColumns; // jshint ignore:line
+  this.prettifyElements();
+  this.ready();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tabletop.Model.prototype.prettifyElements" id="apidoc.element.tabletop.Model.prototype.prettifyElements">
+        function <span class="apidocSignatureSpan">tabletop.</span>Model.prototype.prettifyElements
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Model.prototype.prettifyElements = function () {
+  var prettyElements = [],
+      orderedPrettyNames = [],
+      i, j, ilen, jlen;
+
+  for (j = 0, jlen = this.columnNames.length; j &#x3c; jlen ; j++) {
+    orderedPrettyNames.push(this.prettyColumns[this.columnNames[j]]);
+  }
+
+  for (i = 0, ilen = this.elements.length; i &#x3c; ilen; i++) {
+    var newElement = {};
+    for (j = 0, jlen = this.columnNames.length; j &#x3c; jlen ; j++) {
+      var newColumnName = this.prettyColumns[this.columnNames[j]];
+      newElement[newColumnName] = this.elements[i][this.columnNames[j]];
+    }
+    prettyElements.push(newElement);
+  }
+  this.elements = prettyElements;
+  this.columnNames = orderedPrettyNames;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tabletop.Model.prototype.ready" id="apidoc.element.tabletop.Model.prototype.ready">
+        function <span class="apidocSignatureSpan">tabletop.</span>Model.prototype.ready
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Model.prototype.ready = function () {
+  this.onReady.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tabletop.Model.prototype.toArray" id="apidoc.element.tabletop.Model.prototype.toArray">
+        function <span class="apidocSignatureSpan">tabletop.</span>Model.prototype.toArray
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Model.prototype.toArray = function () {
+  var array = [],
+      i, j, ilen, jlen;
+  for (i = 0, ilen = this.elements.length; i &#x3c; ilen; i++) {
+    var row = [];
+    for (j = 0, jlen = this.columnNames.length; j &#x3c; jlen ; j++) {
+      row.push(this.elements[i][ this.columnNames[j]]);
+    }
+    array.push(row);
+  }
+
+  return array;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tabletop.init" id="apidoc.element.tabletop.init">
+        function <span class="apidocSignatureSpan">tabletop.</span>init
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">init = function (options) {
+  return new Tabletop(options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+### Like how easy?
+
+**Step One:** make a Google Spreadsheet and &#x22;Publish to Web.&#x22;
+
+**Step Two:** Write a page that invokes Tabletop with the published URL Google gives you.
+
+    function init() {
+      Tabletop.<span class="apidocCodeKeywordSpan">init</span>( { key: &#x27;https://docs.google.com/spreadsheets/d/0AmYzu_s7QHsmdDNZUzRlYldnWTZCLXdrMXlYQzVxSFE
+/pubhtml&#x27;,
+                       callback: function(data, tabletop) {
+	                       console.log(data)
+                       },
+                       simpleSheet: true } )
+    }
+
+**Step Three:** Enjoy your data!
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tabletop.sheets" id="apidoc.element.tabletop.sheets">
+        function <span class="apidocSignatureSpan">tabletop.</span>sheets
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sheets = function () {
+  this.log(&#x27;Times have changed! You\&#x27;ll want to use var tabletop = Tabletop.init(...); tabletop.sheets(...); instead of Tabletop
+.sheets(...)&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+&#x3e; &#x26;dagger; prettyColumnNames doesn&#x27;t work with [Flatware](https://github.com/jsoma/flatware), is why we disable it
+ with a proxy by default
+
+## Tabletop object attributes and methods
+
+Once you&#x27;ve initialized a `tabletop` object you can access its good parts.
+
+#### .<span class="apidocCodeKeywordSpan">sheets</span>()
+
+`.sheets()` are the `Tabletop.Model`s that were populated, one per worksheet. You access a sheet by its name.
+
+`.sheets(name)` is how you access a specific sheet. Say I have a worksheet called **Cats I Know**, I&#x27;ll access it via `tabletop
+.sheets(&#x22;Cats I Know&#x22;)`
+
+#### .modelNames
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tabletop.toString" id="apidoc.element.tabletop.toString">
+        function <span class="apidocSignatureSpan">tabletop.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.tabletop.Gruntfile" id="apidoc.module.tabletop.Gruntfile">module tabletop.Gruntfile</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.tabletop.Gruntfile.Gruntfile" id="apidoc.element.tabletop.Gruntfile.Gruntfile">
+        function <span class="apidocSignatureSpan">tabletop.</span>Gruntfile
+        <span class="apidocSignatureSpan">(grunt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Gruntfile = function (grunt) {
+  grunt.loadNpmTasks(&#x27;grunt-contrib-connect&#x27;);
+  grunt.loadNpmTasks(&#x27;grunt-contrib-jshint&#x27;);
+  grunt.loadNpmTasks(&#x27;grunt-contrib-uglify&#x27;);
+
+  grunt.initConfig({
+    uglify: {
+      options: {
+          mangle: false,
+          quoteStyle: 1
+      },
+      tabletop: {
+        files: {
+          &#x27;src/tabletop.min.js&#x27;: [&#x27;src/tabletop.js&#x27;]
+        }
+      }
+    },
+    connect: {
+      testing: {
+        options: {
+          port: 8080
+        }
+      },
+      secure: {
+        options: {
+          port: 8081,
+          keepalive: true,
+          protocol: &#x27;https&#x27;
+        }
+      }
+    },
+    // Make sure code styles are up to par and there are no obvious mistakes
+    jshint: {
+      options: {
+        jshintrc: &#x27;.jshintrc&#x27;,
+        reporter: require(&#x27;jshint-stylish&#x27;)
+      },
+      all: {
+        src: [
+          &#x27;Gruntfile.js&#x27;,
+          &#x27;src/{,*/}*.js&#x27;,
+          &#x27;!src/{,*/}*.min.js&#x27;,
+        ]
+      }
+    }
+  });
+
+  grunt.registerTask(&#x27;default&#x27;, [&#x27;jshint&#x27;, &#x27;uglify&#x27;, &#x27;connect&#x27;]);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.tabletop.Model" id="apidoc.module.tabletop.Model">module tabletop.Model</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.tabletop.Model.Model" id="apidoc.element.tabletop.Model.Model">
+        function <span class="apidocSignatureSpan">tabletop.</span>Model
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Model = function (options) {
+  var i, j, ilen, jlen;
+  this.columnNames = [];
+  this.column_names = this.columnNames; // jshint ignore:line
+  this.name = options.data.feed.title.$t;
+  this.tabletop = options.tabletop;
+  this.elements = [];
+  this.onReady = options.onReady;
+  this.raw = options.data; // A copy of the sheet&#x27;s raw data, for accessing minutiae
+
+  if (typeof(options.data.feed.entry) === &#x27;undefined&#x27;) {
+    options.tabletop.log(&#x27;Missing data for &#x27; + this.name + &#x27;, make sure you didn\&#x27;t forget column headers&#x27;);
+    this.originalColumns = [];
+    this.elements = [];
+    this.onReady.call(this);
+    return;
+  }
+
+  for (var key in options.data.feed.entry[0]){
+    if (/^gsx/.test(key)) {
+      this.columnNames.push(key.replace(&#x27;gsx$&#x27;,&#x27;&#x27;));
+    }
+  }
+
+  this.originalColumns = this.columnNames;
+  this.original_columns = this.originalColumns; // jshint ignore:line
+
+  for (i = 0, ilen =  options.data.feed.entry.length ; i &#x3c; ilen; i++) {
+    var source = options.data.feed.entry[i];
+    var element = {};
+    for (j = 0, jlen = this.columnNames.length; j &#x3c; jlen ; j++) {
+      var cell = source[&#x27;gsx$&#x27; + this.columnNames[j]];
+      if (typeof(cell) !== &#x27;undefined&#x27;) {
+        if (options.parseNumbers &#x26;&#x26; cell.$t !== &#x27;&#x27; &#x26;&#x26; !isNaN(cell.$t)) {
+          element[this.columnNames[j]] = +cell.$t;
+        } else {
+          element[this.columnNames[j]] = cell.$t;
+        }
+      } else {
+        element[this.columnNames[j]] = &#x27;&#x27;;
+      }
+    }
+    if (element.rowNumber === undefined) {
+      element.rowNumber = i + 1;
+    }
+
+    if (options.postProcess) {
+      options.postProcess(element);
+    }
+
+    this.elements.push(element);
+  }
+
+  if (options.prettyColumnNames) {
+    this.fetchPrettyColumns();
+  } else {
+    this.onReady.call(this);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.tabletop.Model.prototype" id="apidoc.module.tabletop.Model.prototype">module tabletop.Model.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.tabletop.Model.prototype.all" id="apidoc.element.tabletop.Model.prototype.all">
+        function <span class="apidocSignatureSpan">tabletop.Model.prototype.</span>all
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">all = function () {
+  return this.elements;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+`.originalColumns` gives you the names of the columns that Google sends on the first pass (numbers stripped, lowercase, etc)
+
+#### .prettyColumns
+
+`.prettyColumns` gives you the mapping between the column headers in the spreadsheet and the and the `columnNames`. Disabled by
+passing `prettyColumnNames: false` when initializing Tabletop.
+
+#### .<span class="apidocCodeKeywordSpan">all</span>()
+
+`.all()` returns an array of the rows of the table, in the style of `[ { name: &#x22;Tom&#x22;, age: 5}, { name: &#x22;Liz&#x22;,
+age: 12 } ]`
+
+#### .toArray()
+
+`.toArray()` returns the rows of the table with numbered indices instead of named ones [ [ &#x22;Tom&#x22;, 5] , [ &#x22;Liz&#x22
+;, 12 ] ]
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tabletop.Model.prototype.fetchPrettyColumns" id="apidoc.element.tabletop.Model.prototype.fetchPrettyColumns">
+        function <span class="apidocSignatureSpan">tabletop.Model.prototype.</span>fetchPrettyColumns
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fetchPrettyColumns = function () {
+  if (!this.raw.feed.link[3]) {
+    return this.ready();
+  }
+
+  var cellurl = this.raw.feed.link[3].href.replace(&#x27;/feeds/list/&#x27;, &#x27;/feeds/cells/&#x27;).replace(&#x27;https://spreadsheets.google.com&#x27;, &#x27;&#x27;);
+  var that = this;
+  this.tabletop.requestData(cellurl, function(data) {
+    that.loadPrettyColumns(data);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tabletop.Model.prototype.loadPrettyColumns" id="apidoc.element.tabletop.Model.prototype.loadPrettyColumns">
+        function <span class="apidocSignatureSpan">tabletop.Model.prototype.</span>loadPrettyColumns
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">loadPrettyColumns = function (data) {
+  var prettyColumns = {};
+
+  var columnNames = this.columnNames;
+
+  var i = 0;
+  var l = columnNames.length;
+
+  for (; i &#x3c; l; i++) {
+    if (typeof data.feed.entry[i].content.$t !== &#x27;undefined&#x27;) {
+      prettyColumns[columnNames[i]] = data.feed.entry[i].content.$t;
+    } else {
+      prettyColumns[columnNames[i]] = columnNames[i];
+    }
+  }
+
+  this.prettyColumns = prettyColumns;
+  this.pretty_columns = this.prettyColumns; // jshint ignore:line
+  this.prettifyElements();
+  this.ready();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tabletop.Model.prototype.prettifyElements" id="apidoc.element.tabletop.Model.prototype.prettifyElements">
+        function <span class="apidocSignatureSpan">tabletop.Model.prototype.</span>prettifyElements
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">prettifyElements = function () {
+  var prettyElements = [],
+      orderedPrettyNames = [],
+      i, j, ilen, jlen;
+
+  for (j = 0, jlen = this.columnNames.length; j &#x3c; jlen ; j++) {
+    orderedPrettyNames.push(this.prettyColumns[this.columnNames[j]]);
+  }
+
+  for (i = 0, ilen = this.elements.length; i &#x3c; ilen; i++) {
+    var newElement = {};
+    for (j = 0, jlen = this.columnNames.length; j &#x3c; jlen ; j++) {
+      var newColumnName = this.prettyColumns[this.columnNames[j]];
+      newElement[newColumnName] = this.elements[i][this.columnNames[j]];
+    }
+    prettyElements.push(newElement);
+  }
+  this.elements = prettyElements;
+  this.columnNames = orderedPrettyNames;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tabletop.Model.prototype.ready" id="apidoc.element.tabletop.Model.prototype.ready">
+        function <span class="apidocSignatureSpan">tabletop.Model.prototype.</span>ready
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ready = function () {
+  this.onReady.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tabletop.Model.prototype.toArray" id="apidoc.element.tabletop.Model.prototype.toArray">
+        function <span class="apidocSignatureSpan">tabletop.Model.prototype.</span>toArray
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toArray = function () {
+  var array = [],
+      i, j, ilen, jlen;
+  for (i = 0, ilen = this.elements.length; i &#x3c; ilen; i++) {
+    var row = [];
+    for (j = 0, jlen = this.columnNames.length; j &#x3c; jlen ; j++) {
+      row.push(this.elements[i][ this.columnNames[j]]);
+    }
+    array.push(row);
+  }
+
+  return array;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+`.prettyColumns` gives you the mapping between the column headers in the spreadsheet and the and the `columnNames`. Disabled by
+passing `prettyColumnNames: false` when initializing Tabletop.
+
+#### .all()
+
+`.all()` returns an array of the rows of the table, in the style of `[ { name: &#x22;Tom&#x22;, age: 5}, { name: &#x22;Liz&#x22;,
+age: 12 } ]`
+
+#### .<span class="apidocCodeKeywordSpan">toArray</span>()
+
+`.toArray()` returns the rows of the table with numbered indices instead of named ones [ [ &#x22;Tom&#x22;, 5] , [ &#x22;Liz&#x22
+;, 12 ] ]
+
+## So what the hell do I do with this?
+
+Imagine it&#x27;s a read-only, JavaScript CMS that you can edit through Google Docs. It&#x27;s like _Christmas_ up in here.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.tabletop.Model.prototype.all" id="apidoc.module.tabletop.Model.prototype.all">module tabletop.Model.prototype.all</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.tabletop.Model.prototype.all.all" id="apidoc.element.tabletop.Model.prototype.all.all">
+        function <span class="apidocSignatureSpan">tabletop.Model.prototype.</span>all
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">all = function () {
+  return this.elements;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+`.originalColumns` gives you the names of the columns that Google sends on the first pass (numbers stripped, lowercase, etc)
+
+#### .prettyColumns
+
+`.prettyColumns` gives you the mapping between the column headers in the spreadsheet and the and the `columnNames`. Disabled by
+passing `prettyColumnNames: false` when initializing Tabletop.
+
+#### .<span class="apidocCodeKeywordSpan">all</span>()
+
+`.all()` returns an array of the rows of the table, in the style of `[ { name: &#x22;Tom&#x22;, age: 5}, { name: &#x22;Liz&#x22;,
+age: 12 } ]`
+
+#### .toArray()
+
+`.toArray()` returns the rows of the table with numbered indices instead of named ones [ [ &#x22;Tom&#x22;, 5] , [ &#x22;Liz&#x22
+;, 12 ] ]
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.tabletop.Model.prototype.fetchPrettyColumns" id="apidoc.module.tabletop.Model.prototype.fetchPrettyColumns">module tabletop.Model.prototype.fetchPrettyColumns</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.tabletop.Model.prototype.fetchPrettyColumns.fetchPrettyColumns" id="apidoc.element.tabletop.Model.prototype.fetchPrettyColumns.fetchPrettyColumns">
+        function <span class="apidocSignatureSpan">tabletop.Model.prototype.</span>fetchPrettyColumns
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fetchPrettyColumns = function () {
+  if (!this.raw.feed.link[3]) {
+    return this.ready();
+  }
+
+  var cellurl = this.raw.feed.link[3].href.replace(&#x27;/feeds/list/&#x27;, &#x27;/feeds/cells/&#x27;).replace(&#x27;https://spreadsheets.google.com&#x27;, &#x27;&#x27;);
+  var that = this;
+  this.tabletop.requestData(cellurl, function(data) {
+    that.loadPrettyColumns(data);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.tabletop.Model.prototype.loadPrettyColumns" id="apidoc.module.tabletop.Model.prototype.loadPrettyColumns">module tabletop.Model.prototype.loadPrettyColumns</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.tabletop.Model.prototype.loadPrettyColumns.loadPrettyColumns" id="apidoc.element.tabletop.Model.prototype.loadPrettyColumns.loadPrettyColumns">
+        function <span class="apidocSignatureSpan">tabletop.Model.prototype.</span>loadPrettyColumns
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">loadPrettyColumns = function (data) {
+  var prettyColumns = {};
+
+  var columnNames = this.columnNames;
+
+  var i = 0;
+  var l = columnNames.length;
+
+  for (; i &#x3c; l; i++) {
+    if (typeof data.feed.entry[i].content.$t !== &#x27;undefined&#x27;) {
+      prettyColumns[columnNames[i]] = data.feed.entry[i].content.$t;
+    } else {
+      prettyColumns[columnNames[i]] = columnNames[i];
+    }
+  }
+
+  this.prettyColumns = prettyColumns;
+  this.pretty_columns = this.prettyColumns; // jshint ignore:line
+  this.prettifyElements();
+  this.ready();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.tabletop.Model.prototype.prettifyElements" id="apidoc.module.tabletop.Model.prototype.prettifyElements">module tabletop.Model.prototype.prettifyElements</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.tabletop.Model.prototype.prettifyElements.prettifyElements" id="apidoc.element.tabletop.Model.prototype.prettifyElements.prettifyElements">
+        function <span class="apidocSignatureSpan">tabletop.Model.prototype.</span>prettifyElements
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">prettifyElements = function () {
+  var prettyElements = [],
+      orderedPrettyNames = [],
+      i, j, ilen, jlen;
+
+  for (j = 0, jlen = this.columnNames.length; j &#x3c; jlen ; j++) {
+    orderedPrettyNames.push(this.prettyColumns[this.columnNames[j]]);
+  }
+
+  for (i = 0, ilen = this.elements.length; i &#x3c; ilen; i++) {
+    var newElement = {};
+    for (j = 0, jlen = this.columnNames.length; j &#x3c; jlen ; j++) {
+      var newColumnName = this.prettyColumns[this.columnNames[j]];
+      newElement[newColumnName] = this.elements[i][this.columnNames[j]];
+    }
+    prettyElements.push(newElement);
+  }
+  this.elements = prettyElements;
+  this.columnNames = orderedPrettyNames;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.tabletop.Model.prototype.ready" id="apidoc.module.tabletop.Model.prototype.ready">module tabletop.Model.prototype.ready</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.tabletop.Model.prototype.ready.ready" id="apidoc.element.tabletop.Model.prototype.ready.ready">
+        function <span class="apidocSignatureSpan">tabletop.Model.prototype.</span>ready
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ready = function () {
+  this.onReady.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.tabletop.Model.prototype.toArray" id="apidoc.module.tabletop.Model.prototype.toArray">module tabletop.Model.prototype.toArray</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.tabletop.Model.prototype.toArray.toArray" id="apidoc.element.tabletop.Model.prototype.toArray.toArray">
+        function <span class="apidocSignatureSpan">tabletop.Model.prototype.</span>toArray
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toArray = function () {
+  var array = [],
+      i, j, ilen, jlen;
+  for (i = 0, ilen = this.elements.length; i &#x3c; ilen; i++) {
+    var row = [];
+    for (j = 0, jlen = this.columnNames.length; j &#x3c; jlen ; j++) {
+      row.push(this.elements[i][ this.columnNames[j]]);
+    }
+    array.push(row);
+  }
+
+  return array;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+`.prettyColumns` gives you the mapping between the column headers in the spreadsheet and the and the `columnNames`. Disabled by
+passing `prettyColumnNames: false` when initializing Tabletop.
+
+#### .all()
+
+`.all()` returns an array of the rows of the table, in the style of `[ { name: &#x22;Tom&#x22;, age: 5}, { name: &#x22;Liz&#x22;,
+age: 12 } ]`
+
+#### .<span class="apidocCodeKeywordSpan">toArray</span>()
+
+`.toArray()` returns the rows of the table with numbered indices instead of named ones [ [ &#x22;Tom&#x22;, 5] , [ &#x22;Liz&#x22
+;, 12 ] ]
+
+## So what the hell do I do with this?
+
+Imagine it&#x27;s a read-only, JavaScript CMS that you can edit through Google Docs. It&#x27;s like _Christmas_ up in here.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.tabletop.init" id="apidoc.module.tabletop.init">module tabletop.init</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.tabletop.init.init" id="apidoc.element.tabletop.init.init">
+        function <span class="apidocSignatureSpan">tabletop.</span>init
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">init = function (options) {
+  return new Tabletop(options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+### Like how easy?
+
+**Step One:** make a Google Spreadsheet and &#x22;Publish to Web.&#x22;
+
+**Step Two:** Write a page that invokes Tabletop with the published URL Google gives you.
+
+    function init() {
+      Tabletop.<span class="apidocCodeKeywordSpan">init</span>( { key: &#x27;https://docs.google.com/spreadsheets/d/0AmYzu_s7QHsmdDNZUzRlYldnWTZCLXdrMXlYQzVxSFE
+/pubhtml&#x27;,
+                       callback: function(data, tabletop) {
+	                       console.log(data)
+                       },
+                       simpleSheet: true } )
+    }
+
+**Step Three:** Enjoy your data!
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.tabletop.sheets" id="apidoc.module.tabletop.sheets">module tabletop.sheets</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.tabletop.sheets.sheets" id="apidoc.element.tabletop.sheets.sheets">
+        function <span class="apidocSignatureSpan">tabletop.</span>sheets
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sheets = function () {
+  this.log(&#x27;Times have changed! You\&#x27;ll want to use var tabletop = Tabletop.init(...); tabletop.sheets(...); instead of Tabletop
+.sheets(...)&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+&#x3e; &#x26;dagger; prettyColumnNames doesn&#x27;t work with [Flatware](https://github.com/jsoma/flatware), is why we disable it
+ with a proxy by default
+
+## Tabletop object attributes and methods
+
+Once you&#x27;ve initialized a `tabletop` object you can access its good parts.
+
+#### .<span class="apidocCodeKeywordSpan">sheets</span>()
+
+`.sheets()` are the `Tabletop.Model`s that were populated, one per worksheet. You access a sheet by its name.
+
+`.sheets(name)` is how you access a specific sheet. Say I have a worksheet called **Cats I Know**, I&#x27;ll access it via `tabletop
+.sheets(&#x22;Cats I Know&#x22;)`
+
+#### .modelNames
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.tabletop.toString" id="apidoc.module.tabletop.toString">module tabletop.toString</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.tabletop.toString.toString" id="apidoc.element.tabletop.toString.toString">
+        function <span class="apidocSignatureSpan">tabletop.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>

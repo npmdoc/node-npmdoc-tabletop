@@ -1,4 +1,7 @@
-# api documentation for  [tabletop (v1.5.1)](https://github.com/jsoma/tabletop#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-tabletop.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-tabletop) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-tabletop.svg)](https://travis-ci.org/npmdoc/node-npmdoc-tabletop)
+# npmdoc-tabletop
+
+#### basic api documentation for  [tabletop (v1.5.2)](https://github.com/jsoma/tabletop#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-tabletop.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-tabletop) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-tabletop.svg)](https://travis-ci.org/npmdoc/node-npmdoc-tabletop)
+
 #### **Tabletop.js** takes a Google Spreadsheet and makes it easily accessible through JavaScript. With zero dependencies!
 
 [![NPM](https://nodei.co/npm/tabletop.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/tabletop)
@@ -36,14 +39,15 @@
         "grunt-contrib-jshint": "^1.1.0",
         "grunt-contrib-uglify": "^2.0.0",
         "jshint-stylish": "^2.0.0",
-        "mocha": "^3.2.0"
+        "mocha": "^3.2.0",
+        "uglifyjs": "^2.4.10"
     },
     "directories": {
         "example": "examples"
     },
     "dist": {
-        "shasum": "1221e67b59c98347d369bf0711d969580768ed79",
-        "tarball": "https://registry.npmjs.org/tabletop/-/tabletop-1.5.1.tgz"
+        "shasum": "654d484cae4e0e65a1f2077a7bec60da7b7464f3",
+        "tarball": "https://registry.npmjs.org/tabletop/-/tabletop-1.5.2.tgz"
     },
     "engines": {
         "node": ">=0.10.0"
@@ -64,9 +68,11 @@
         "url": "git+https://github.com/jsoma/tabletop.git"
     },
     "scripts": {
-        "test": "node node_modules/mocha/bin/mocha --timeout 5000 && node node_modules/nsp/bin/nsp check"
+        "test": "node node_modules/mocha/bin/mocha --timeout 5000 && node node_modules/nsp/bin/nsp check",
+        "uglify": "node node_modules/uglifyjs/bin/uglifyjs src/tabletop.js > src/tabletop.min.js "
     },
-    "version": "1.5.1"
+    "version": "1.5.2",
+    "bin": {}
 }
 ```
 

@@ -1,6 +1,6 @@
 {
     "author": "kai zhu <kaizhu256@gmail.com>",
-    "description": "api documentation for [tabletop (v1.5.1)](https://github.com/jsoma/tabletop#readme) [![npm package](https://img.shields.io/npm/v/npmdoc-tabletop.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-tabletop) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-tabletop.svg)](https://travis-ci.org/npmdoc/node-npmdoc-tabletop)",
+    "description": "#### basic api documentation for  [tabletop (v1.5.2)](https://github.com/jsoma/tabletop#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-tabletop.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-tabletop) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-tabletop.svg)](https://travis-ci.org/npmdoc/node-npmdoc-tabletop)",
     "devDependencies": {
         "electron-lite": "kaizhu256/node-electron-lite#alpha",
         "tabletop": "*",
